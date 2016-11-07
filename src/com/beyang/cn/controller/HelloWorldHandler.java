@@ -58,6 +58,7 @@ public class HelloWorldHandler {
 	public String testRedirect(Map<String,Object> model) {
 		model.put("userName", "bruce");
 		return "redirect:index.jsp"; 
+		// return "redirect:/testForword";
 	}
 	
 	/**
