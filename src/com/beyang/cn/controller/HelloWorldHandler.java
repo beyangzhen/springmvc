@@ -34,7 +34,7 @@ public class HelloWorldHandler {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName(SUCCESS);
 		// 相当于 request.setAttribute()
-		mv.addObject("time", new Date()); // 页面通过el表达式获取
+		mv.addObject("time", new Date()); // 页面通过el表达式获取①
 		
 		return mv;
 	}
@@ -42,7 +42,7 @@ public class HelloWorldHandler {
 	@RequestMapping("/helloWorld")
 	public String sayHello(Model model) {
 		// 相当于 request.setAttribute()
-		model.addAttribute("time", new Date()); // 页面通过el表达式获取
+		model.addAttribute("time", new Date()); // 页面通过el表达式获取②
 		
 		return SUCCESS;
 	}
@@ -216,7 +216,7 @@ public class HelloWorldHandler {
 	}
 
 	/**
-	 * 运行流程：
+	 * 更新运行流程：
 	 * 	   1. 执行@ModelAttribute注解修饰的方法：从数据库中获取对象，把对象放到Map中，键为： user
 	 * 	   2. springmvc从map中取出user对象，并把表单的请求参数赋值给该user对象的对应属性
 	 *     3. springmvc会把上述对象传入目标方法的参数中
