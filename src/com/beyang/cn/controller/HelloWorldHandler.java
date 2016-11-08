@@ -208,7 +208,7 @@ public class HelloWorldHandler {
 		return SUCCESS;
 	}
 		
-	// @ModelAttribute("user") 表示将返回值放在request中的key
+	// @ModelAttribute("user") 表示将函数返回值放在request中的key
 	@ModelAttribute("user")
 	public Map<String, String> getItemTypes() {
 		Map<String, String> users = new HashMap<String, String>();
