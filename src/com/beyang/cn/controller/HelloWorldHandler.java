@@ -138,14 +138,16 @@ public class HelloWorldHandler {
 	
 	/**
 	 *  传请求参数使用 @RequestParam("")
-	 *     若传递参数时age值为空(解决方式)：
+	 *     若传递参数时不给age赋值，且age为int型，则springmvc自动给age赋为null。与int不符报错(解决方式)：
 	 *   	   1. pojo中写成对应包装类的类型
 	 *         2. 使用defaultValue来赋默认值
 	 *    
 	 */
 	@RequestMapping(value="/testParameters")
 	public String getParameters(
-                                // 请求参数和类属性一致时，@RequestParam()也可以不写
+				// 请求参数和类属性一致时，@RequestParam()也可以不写
+			
+		           	// required=false代表，页面request请求中的参数可以没有该参数
 				@RequestParam(value="userName", required=false) String userName, // required: 默认是 true
 				// @RequestParam(value="age") pojo中写成 Integer age
 				@RequestParam(value="age", defaultValue="0") int age
