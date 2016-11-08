@@ -145,8 +145,8 @@ public class HelloWorldHandler {
 	 */
 	@RequestMapping(value="/testParameters")
 	public String getParameters(
-				// required: 默认是 true
-				@RequestParam(value="userName", required=false) String userName, 
+                                // 请求参数和类属性一致时，@RequestParam()也可以不写
+				@RequestParam(value="userName", required=false) String userName, // required: 默认是 true
 				// @RequestParam(value="age") pojo中写成 Integer age
 				@RequestParam(value="age", defaultValue="0") int age
 			) {
@@ -184,7 +184,7 @@ public class HelloWorldHandler {
 	}
 	
 	/**
-	 *  springmvc将 POJO对象和请求参数值绑定（前提：参数名和类属性名必须一致）
+	 *  springmvc将 POJO对象和请求参数值绑定（前提：参数名和类属性名必须一致，可以不加@RequestParam()）
 	 *      支持绑定级联属性。如：User类中有Address类的对象，页面上参数写address.city、address.provice 等
 	 *  --> 形参可以直接获取request域中的对象
 	 * 
