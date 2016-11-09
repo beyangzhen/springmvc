@@ -186,9 +186,8 @@ public class HelloWorldHandler {
 	}
 	
 	/**
-	 *  springmvc将 POJO对象和请求参数值绑定（前提：参数名和类属性名必须一致，可以不加@RequestParam()）
-	 *      支持绑定级联属性。如：User类中有Address类的对象，页面上参数写address.city、address.provice 等
-	 *  --> 形参可以直接获取request域中的对象
+	 *  springmvc自动将 POJO对象（形参）和 request域中请求参数值绑定（前提：参数名和类属性名必须一致，可不加@RequestParam()）
+	 *      支持绑定级联属性。如：User类中有Address类的对象，但页面上表单中属性的名字要写成 address.city、address.provice
 	 * 
 	 */
 	@RequestMapping("/testPOJO")
