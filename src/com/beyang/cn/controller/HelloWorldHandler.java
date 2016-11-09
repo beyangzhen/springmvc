@@ -145,8 +145,10 @@ public class HelloWorldHandler {
 	 */
 	@RequestMapping(value="/testParameters")
 	public String getParameters(
-				// 请求参数和类属性一致时，@RequestParam()也可以不写
-			
+				// 方式一：springmvc自动将 "request域中请求参数值" 绑定到 "形参中POJO对象"（前提：①参数名和类属性名必须一致 
+				//									     ②级联属性，则页面表单中属性名字要写成 title.question、title.optionA）														        ②级联属性，则页面表单中属性名字要写成 title.question、title.optionA）
+			 	// 方式二：请求参数和类属性一致时，@RequestParam()也可以不写
+		
 		           	// required=false代表，页面request请求中的参数可以没有该参数
 				@RequestParam(value="userName", required=false) String userName, // required: 默认是 true
 				// @RequestParam(value="age") pojo中写成 Integer age
