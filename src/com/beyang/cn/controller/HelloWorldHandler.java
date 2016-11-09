@@ -63,10 +63,10 @@ public class HelloWorldHandler {
 	
 	/**
 	 *  REST 风格的使用
-	 *     PUT   ： 修改
-	 *     DELETE： 删除
-	 *     POST  : 新增
+	 *     POST  :  新增 
 	 *     GET   ： 获取
+	 *     DELETE： 删除
+	 *     PUT   ： 修改	 	 
 	 */
 	@RequestMapping(value="testREST", method=RequestMethod.DELETE)
 	public String testREST_DELETE() {
